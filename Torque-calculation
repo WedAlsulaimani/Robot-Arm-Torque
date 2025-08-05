@@ -1,0 +1,51 @@
+Robot arm torque calculation:
+
+weight = 2kg
+arm length = 0.4m
+joints = 3
+position = Horizontal
+gears = 5:1 reduction 
+
+The arm is evenly divided = ~0.133m
+
+
+
+Torque without gear reduction
+
+First joint:    T = 2 x 9.81 x 0.133             = 2.61 N\cdotpm
+Second joint:   T = 2 x 9.81 x (0.133 + 0.133)   = 5.22 N\cdotpm
+Third joint:    T = 2 x 9.81 x 0.4               = 7.83 N\cdotpm
+
+
+
+Torque after gear reduction (5:1)
+
+First joint =  0.52 Nm
+Second joint = 1.04 Nm
+Third joint =  1.57 Nm
+
+
+
+       Motor Suggestions:
+
+First joint => MG996R , Max torque => ~1.1 Nm 
+Second joint => MG996R + Gearbox , Max torque => ~1.1 Nm 
+Third joint => JGB37-520 w/ Gearbox , Max torque => ~2 Nm 
+
+
+
+
+Downsides of Doubling Payload (1 kg ➝ 2 kg):
+
+*Increased torque demand
+*Higher power draw
+*More heat on motors
+*Slower motion
+*Risk of mechanical failure
+
+
+Solutions:
+*Use higher gear ratios
+*Choose stronger motors (e.g., Dynamixel, NEMA + gearbox)
+*Lighten arm structure
+*Add counterweights or spring assistance
